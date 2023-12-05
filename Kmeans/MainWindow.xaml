@@ -42,12 +42,14 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <oxy:PlotView x:Name="Plot" Grid.Row="0"/>
+                    <DockPanel Grid.Row="1" Margin="20, 5, 20, 5">
+                        <TextBox x:Name="ClustersTextBox" VerticalScrollBarVisibility="Auto" IsReadOnly="True"/>
+                    </DockPanel>
                 </Grid>
             </Grid>
             <Grid Grid.Row="1">
                 <DockPanel VerticalAlignment="Center">
-                    <Label Content="Ingrese los datos del nuevo punto a clasificar.      K:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                    <TextBox x:Name="KTextBox" Text="3" VerticalAlignment="Center" HorizontalAlignment="Left" Width="30" Margin="5, 0, 0, 0"/>
+                    <Label Content="Ingrese los parametros para generar los clusters." HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 </DockPanel>
             </Grid>
             <Grid Grid.Row="2">
@@ -55,22 +57,17 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
                 <DockPanel Grid.Column="0" VerticalAlignment="Center">
-                    <Label Content="X:" VerticalAlignment="Center"/>
-                    <TextBox x:Name="XTextBox" Text="-0.7" VerticalAlignment="Center" Margin="0, 0, 20, 0"/>
+                    <Label Content="K:" VerticalAlignment="Center"/>
+                    <TextBox x:Name="KTextBox" Text="3" VerticalAlignment="Center" Margin="0, 0, 20, 0"/>
                 </DockPanel>
                 <DockPanel Grid.Column="1" VerticalAlignment="Center">
-                    <Label Content="Y:" VerticalAlignment="Center"/>
-                    <TextBox x:Name="YTextBox" Text="-0.5" VerticalAlignment="Center" Margin="0, 0, 20, 0"/>
+                    <Label Content="Iteraciones:" VerticalAlignment="Center"/>
+                    <TextBox x:Name="IteracionesTextBox" Text="300" VerticalAlignment="Center" Margin="0, 0, 20, 0"/>
                 </DockPanel>
-                <DockPanel Grid.Column="2" Margin="30, 5, 30, 5">
-                    <Button Grid.Column="2" Content="Clasificar" Click="ClasificarButtonClick"/>
-                </DockPanel>
-                <DockPanel Grid.Column="3" VerticalAlignment="Center">
-                    <Label Content="Resultado:" VerticalAlignment="Center"/>
-                    <TextBox x:Name="ResultadoTextBox" IsEnabled="False" VerticalAlignment="Center" Margin="0, 0, 20, 0"/>
+                <DockPanel Grid.Column="2" Margin="50, 5, 50, 5">
+                    <Button Grid.Column="2" Content="Generar" Click="ClasificarButtonClick"/>
                 </DockPanel>
             </Grid>
         </Grid>
